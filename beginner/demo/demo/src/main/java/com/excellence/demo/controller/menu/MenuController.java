@@ -40,14 +40,15 @@ public class MenuController {
     @GetMapping(value = "/{id}", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public ExampleMenu get(@PathVariable int id) {
-        // TODO:
+        // TODO: get()は、任意のidを持つレコードのデータをクライアントに返すメソッド
+        //       エンドポイントで受け取ったidを使い、サービスからgetMenuByIdを呼び出す
         return null;
     }
 
     @PutMapping(value = "/{id}", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public void update(@PathVariable int id,@RequestBody ExampleMenuRequest request) {
-        // TODO:
+        // TODO: update()を完成させる。基本的にはcreate()と同じ。
     }
 
     public MenuController(MenuService service) {

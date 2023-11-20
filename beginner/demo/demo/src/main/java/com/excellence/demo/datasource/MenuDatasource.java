@@ -38,13 +38,14 @@ public class MenuDatasource implements MenuRepository {
 
     @Override
     public void updateMenu(ExampleMenu menu) {
-        // TODO:
-        String sql = "";
+        // TODO: updateMenuを完成させる
+        String sql = "ここにレコードを更新するSQL文を書く";
     }
 
     @Override
     public ExampleMenu getMenu(int id) {
-        String sql = "";
+        // TODO: 適切なSQL文を書いて、getMenu()を完成させる
+        String sql = "ここに指定したidを持つレコードを取得するSQL文を書く(WHERE句を利用)";
         List<Map<String, Object>> records = jdbcTemplate.queryForList(sql, id);
         if (records.isEmpty()) return ExampleMenu.empty();
         return toModel(records.get(0));

@@ -36,12 +36,9 @@ public class OrderController {
     }
 
     /*
-     * In this lesson, we will add a new API to get order by id and how update the order.
-     * the fundamental if the SAME as the create order API.
-     * GET for get order by id
-     * PUT for update order
+     * GETで特定のidを持つデータを取得し、
+     * PUTでデータを更新する
      */
-
     @GetMapping(value = "/{orderId}", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public ExampleOrder get(@PathVariable int orderId) {
