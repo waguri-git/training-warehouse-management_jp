@@ -7,7 +7,6 @@ public class ExampleMenuRequest {
 
     public final String name;
 
-    // TODO: nameが空白でないかを検証するvalidate()を作成する
     public ValidateResult validate() {
         if (name.equals("")) return ValidateResult.failed("name can't be empty");
 

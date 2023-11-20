@@ -1,5 +1,7 @@
 package com.excellence.demo.model;
 
+import java.time.LocalDate;
+
 public class ExampleMenu {
     public final int id;
 
@@ -11,6 +13,10 @@ public class ExampleMenu {
 
     public String name() {
         return name;
+    }
+
+    public static ExampleMenu empty() {
+        return new ExampleMenu(0, "");
     }
 
     public ExampleMenu(int id, String name) {
