@@ -90,7 +90,7 @@ async function renderOrder(id) {
         <input type="number" name="amount" value="${order.amount}"/>
         <label for="orderStatus">orderStatus</label>
         <input type="text" name="orderStatus" value="${order.orderStatus}"/>
-        <label for="orderDate">Amount</label>
+        <label for="orderDate">orderDate</label>
         <input type="date" name="orderDate" value="${order.orderDate}"/>
         <button type="submit" onclick="handleUpdateOrder(event, ${order.id})">Update</button>
     </form>

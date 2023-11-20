@@ -15,11 +15,6 @@ public class ExampleOrderRequest {
     public final String orderStatus;
     public final String orderDate;
 
-    /*  TODO: validate()に以下の検証を追加する
-     *  1. itemIdが0より大きい
-     *  2. nameが空白でない
-     *  3. orderDateが過去の日時ではない
-     */
     public ValidateResult validate() {
         if (itemId < 1) return ValidateResult.failed("itemId can't be less than 1");
 

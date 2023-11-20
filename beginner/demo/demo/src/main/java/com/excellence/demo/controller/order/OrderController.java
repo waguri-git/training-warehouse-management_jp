@@ -24,12 +24,6 @@ public class OrderController {
         return response;
     }
 
-    /*
-     *  @RequestBodyは、クライアントからのリクエストボディを
-     *  指定したクラスにマッピングできる(今回は、ExampleOrderRequestクラスにマッピング)。
-     *  その後、リクエストが有効であるかどうかを検証し、
-     *  有効でない場合は、ステータスコード400とカスタムメッセージでエラー結果を返す
-     */
     @PostMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody ExampleOrderRequest request) {
@@ -40,6 +34,31 @@ public class OrderController {
         }
         service.createOrder(request.toExampleOrder());
     }
+
+    /*
+     * In this lesson, we will add a new API to get order by id and how update the order.
+     * the fundamental if the SAME as the create order API.
+     * GET for get order by id
+     * PUT for update order
+     */
+
+    @GetMapping(value = "/{orderId}", produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public ExampleOrder get(@PathVariable int orderId) {
+        return service.getOrderById(orderId);
+    }
+
+    @PutMapping(value = "/{orderId}", produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public void update(@PathVariable int orderId,@RequestBody ExampleOrderRequest request) {
+        ValidateResult validate = request.validate();
+        if (!validate.ok()) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST, validate.errorMessage());
+        }
+        service.updateOrder(request.toExampleOrder(orderId));
+    }
+
 
     public OrderController(OrderService service) {
         this.service = service;

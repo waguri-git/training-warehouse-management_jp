@@ -1,6 +1,7 @@
 package com.excellence.demo.service;
 
 import com.excellence.demo.model.ExampleMenu;
+import com.excellence.demo.model.ExampleOrder;
 import com.excellence.demo.repository.MenuRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,14 @@ public class MenuService {
 
     public void createMenu(ExampleMenu menu) {
         repository.insertMenu(menu);
+    }
+
+    public ExampleMenu getMenuById(int id) {
+        return repository.getMenu(id);
+    }
+
+    public void updateMenu(ExampleMenu menu) {
+        repository.updateMenu(menu);
     }
 
     public MenuService(MenuRepository repository) {

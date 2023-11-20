@@ -27,12 +27,6 @@ public class OrderDatasource implements OrderRepository {
                 .collect(toList());
     }
 
-    /*
-     *  今回の場合は、ExampleOrderクラスでもデータベースからのデータを表現できるので、
-     *  Entityクラスを使用しなくてもよいが、
-     *  データベースとモデルを異なる設計にする場合、
-     *  Entityクラスを使用して、データベースからのデータを表すことができる
-     */
     @Override
     public void insertOrder(ExampleOrder order) {
         ExampleOrderEntity entity = ExampleOrderEntity.of(order);
@@ -45,15 +39,35 @@ public class OrderDatasource implements OrderRepository {
                 entity.orderStatus.name(),
                 entity.orderDate);
     }
-    /*
-     *  ExampleOrderEntityクラスがない場合は、以下のようになる
-     *  jdbcTemplate.update(sql,
-     *  order.itemId,
-     *  order.name,
-     *  order.amount,
-     *  order.orderStatus.name(),
-     *  order.orderDate);
+
+    /**
+     * we change our Application Model into Entity Model that has the same structure as the database table.
+     * then update it
+     * try to lo learn more about jdbc template, so you can customize your sql command
+     * https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html
      */
+    @Override
+    public void updateOrder(ExampleOrder order) {
+        ExampleOrderEntity entity = ExampleOrderEntity.of(order);
+        String sql = "UPDATE example_order SET item_id = ?,name = ?, amount = ?, order_status = ?, order_date = ? WHERE id = ?";
+        jdbcTemplate.update(
+                sql,
+                entity.itemId,
+                entity.name,
+                entity.amount,
+                entity.orderStatus.name(),
+                entity.orderDate,
+                entity.id
+        );
+    }
+
+    @Override
+    public ExampleOrder getOrder(int id) {
+        String sql = "SELECT * FROM example_order WHERE id = ?";
+        List<Map<String, Object>> records = jdbcTemplate.queryForList(sql, id);
+        if (records.isEmpty()) return ExampleOrder.empty();
+        return toModel(records.get(0));
+    }
 
     private ExampleOrder toModel(Map<String, Object> record) {
         Date date = (Date) record.get("order_date");

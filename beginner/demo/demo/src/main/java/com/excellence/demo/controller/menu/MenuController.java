@@ -2,7 +2,9 @@ package com.excellence.demo.controller.menu;
 
 import com.excellence.demo.controller.menu.request.ExampleMenuRequest;
 import com.excellence.demo.controller.menu.response.MenusResponse;
+import com.excellence.demo.controller.order.request.ExampleOrderRequest;
 import com.excellence.demo.model.ExampleMenu;
+import com.excellence.demo.model.ExampleOrder;
 import com.excellence.demo.model.ValidateResult;
 import com.excellence.demo.service.MenuService;
 import org.springframework.http.HttpStatus;
@@ -19,7 +21,6 @@ public class MenuController {
     @GetMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public MenusResponse getAll() {
-        // TODO: MenuServiceからメソッドを呼び出して、返り値を修正する
         List<ExampleMenu> menus = service.getAllMenu();
         MenusResponse response = new MenusResponse(menus);
         return response;
@@ -28,13 +29,25 @@ public class MenuController {
     @PostMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody ExampleMenuRequest request) {
-        // TODO: create()を完成させる
         ValidateResult validate = request.validate();
         if(!validate.ok()) {
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST, validate.errorMessage());
         }
         service.createMenu(request.toExampleMenu());
+    }
+
+    @GetMapping(value = "/{id}", produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public ExampleMenu get(@PathVariable int id) {
+        // TODO:
+        return null;
+    }
+
+    @PutMapping(value = "/{id}", produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public void update(@PathVariable int id,@RequestBody ExampleMenuRequest request) {
+        // TODO:
     }
 
     public MenuController(MenuService service) {

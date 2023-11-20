@@ -75,7 +75,7 @@ async function renderMenu(id) {
         <div> order id: ${menu.id}</div>
         <label for="itemId">Item ID</label>
         <input type="text" name="name" value="${menu.name}"/>
-        <label for="amount">Amount</label>
+        <label for="name">Name</label>
         <button type="submit" onclick="handleUpdateOrder(event, ${menu.id})">Update</button>
     </form>
     `;
