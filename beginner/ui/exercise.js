@@ -1,3 +1,8 @@
+/* 
+ * TODO: addEventListenerを使って、ボタンを押さなくても
+ * DOM読み込み後に、fetchMenus()が呼び出されるようにする
+ */
+
 async function fetchMenus() {
     const menus = await fetch("http://localhost:8080/menus");
     if (!menus.ok) {
@@ -21,6 +26,9 @@ function renderMenus(menusJson) {
         <tr>
             <td>${menu.id}</td>
             <td>${menu.name}</td>
+            <td>
+            <button onclick="renderMenu(${menu.id})">Edit</button>
+            </td>
         </tr>
         `;
         menus.appendChild(menuTable);
@@ -34,9 +42,7 @@ async function handleRegisterMenu(event) {
     const menu = {
         name: formData.get("name"),
     };
-    console.log("a")
     
-    // TODO: "fetch"を完成させる
     const response = await fetch("http://localhost:8080/menus", {
         method: "POST",
         headers: {
@@ -52,3 +58,33 @@ async function handleRegisterMenu(event) {
 
     fetchMenus();
 }
+
+async function fetchMenu(id) {
+    const response = await fetch(`http://localhost:8080/menus/${id}`);
+    if (!response.ok) {
+        throw new Error("Could not fetch menu");
+    }
+    return await response.json();
+}
+
+async function renderMenu(id) {
+    const menu = await fetchMenu(id);
+    const orderDiv = document.getElementById("menu-modal-component");
+    orderDiv.innerHTML = `
+    <form>
+        <div> order id: ${menu.id}</div>
+        <label for="itemId">Item ID</label>
+        <input type="text" name="name" value="${menu.name}"/>
+        <label for="amount">Amount</label>
+        <button type="submit" onclick="handleUpdateOrder(event, ${menu.id})">Update</button>
+    </form>
+    `;
+    document.getElementById("myMenu").style.display = "block";
+}
+
+
+async function handleUpdateMenu(event, id) {
+    event.preventDefault();
+    //TODO: handleUpdateOrderを参考に完成させる
+}
+
