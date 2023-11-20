@@ -2,6 +2,7 @@
  * TODO: addEventListenerを使って、ボタンを押さなくても
  * DOM読み込み後に、fetchMenus()が呼び出されるようにする
  */
+document.addEventListener("DOMContentLoaded", fetchMenus());
 
 async function fetchMenus() {
     const menus = await fetch("http://localhost:8080/menus");
@@ -72,10 +73,9 @@ async function renderMenu(id) {
     const orderDiv = document.getElementById("menu-modal-component");
     orderDiv.innerHTML = `
     <form>
-        <div> order id: ${menu.id}</div>
-        <label for="itemId">Item ID</label>
-        <input type="text" name="name" value="${menu.name}"/>
+        <div> Menu ID: ${menu.id}</div>
         <label for="name">Name</label>
+        <input type="text" name="name" value="${menu.name}"/>
         <button type="submit" onclick="handleUpdateOrder(event, ${menu.id})">Update</button>
     </form>
     `;
@@ -86,5 +86,26 @@ async function renderMenu(id) {
 async function handleUpdateMenu(event, id) {
     event.preventDefault();
     //TODO: handleUpdateOrderを参考に完成させる
+    const form = event.target.form;
+    const formData = new FormData(form);
+    const menu = {
+        name: formData.get("name"),
+    };
+
+    const response = await fetch(`http://localhost:8080/menus/${id}`, {
+        method: "PUT",
+        headers: {
+        "Content-Type": "application/json",
+        },
+        body: JSON.stringify(menu),
+    });
+
+    if (!response.ok) {
+        const result = await response.json();
+        throw new Error(result.message);
+    } else {
+        await fetchMenus();
+        document.getElementById("myModal").style.display = "none";
+    }
 }
 
