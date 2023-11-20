@@ -76,7 +76,7 @@ async function renderMenu(id) {
         <label for="itemId">Item ID</label>
         <input type="text" name="name" value="${menu.name}"/>
         <label for="name">Name</label>
-        <button type="submit" onclick="handleUpdateOrder(event, ${menu.id})">Update</button>
+        <button type="submit" onclick="handleUpdateMenu(event, ${menu.id})">Update</button>
     </form>
     `;
     document.getElementById("myMenu").style.display = "block";
