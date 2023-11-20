@@ -32,17 +32,17 @@ async function handleRegisterMenu(event) {
     const form = event.target.form;
     const formData = new FormData(form);
     const menu = {
-        id: formData.get("id"),
         name: formData.get("name"),
     };
+    console.log("a")
     
     // TODO: "fetch"を完成させる
-    const response = await fetch("", {
-        method: "",
+    const response = await fetch("http://localhost:8080/menus", {
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: "送信するデータを記述",
+        body: JSON.stringify(menu),
     });
     if (!response.ok) {
         const error = await response.json();

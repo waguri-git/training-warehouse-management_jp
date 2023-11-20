@@ -6,6 +6,7 @@ import com.excellence.demo.model.ValidateResult;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class ExampleOrderRequest {
     public final Integer itemId;
@@ -20,10 +21,17 @@ public class ExampleOrderRequest {
      *  3. orderDateが過去の日時ではない
      */
     public ValidateResult validate() {
+        if (itemId < 1) return ValidateResult.failed("itemId can't be less than 1");
+
+        if (name.equals("")) return ValidateResult.failed("name can't be empty");
+
         if (amount < 1) return ValidateResult.failed("amount can't be less than 1");
 
         if (!OrderStatus.validOf(orderStatus))
             return ValidateResult.failed("orderStatus: PENDING, COMPLETED, CANCELLED are only allowed");
+
+        if(LocalDate.parse(orderDate).isBefore(LocalDate.now()))
+            return ValidateResult.failed("orderDate can't be in the past");
 
         return ValidateResult.success();
     }
