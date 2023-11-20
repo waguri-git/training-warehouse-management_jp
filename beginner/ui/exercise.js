@@ -76,7 +76,7 @@ async function renderMenu(id) {
         <div> Menu ID: ${menu.id}</div>
         <label for="name">Name</label>
         <input type="text" name="name" value="${menu.name}"/>
-        <button type="submit" onclick="handleUpdateOrder(event, ${menu.id})">Update</button>
+        <button type="submit" onclick="handleUpdateMenu(event, ${menu.id})">Update</button>
     </form>
     `;
     document.getElementById("myMenu").style.display = "block";
@@ -105,7 +105,7 @@ async function handleUpdateMenu(event, id) {
         throw new Error(result.message);
     } else {
         await fetchMenus();
-        document.getElementById("myModal").style.display = "none";
+        document.getElementById("myMenu").style.display = "none";
     }
 }
 
