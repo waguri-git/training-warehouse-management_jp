@@ -32,7 +32,6 @@ async function handleRegisterMenu(event) {
     const form = event.target.form;
     const formData = new FormData(form);
     const menu = {
-        id: formData.get("id"),
         name: formData.get("name"),
     };
     
