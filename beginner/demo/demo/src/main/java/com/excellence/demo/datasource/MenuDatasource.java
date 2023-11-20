@@ -18,7 +18,6 @@ public class MenuDatasource implements MenuRepository {
 
     @Override
     public List<ExampleMenu> getAllMenu() {
-        // TODO: SQL文を書いて、jdbcTemplateを使って、DBからデータを取得する
         String sql = "SELECT * FROM Example_menu";
         List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
         return records.stream()
@@ -32,7 +31,6 @@ public class MenuDatasource implements MenuRepository {
         String sql = "ここにテーブルにデータを追加するSQL文を書く";
     }
 
-    //　toModelメソッドは、DBから取得したレコードを宣言されたモデル(ExampleMenu)に変換する
     private ExampleMenu toModel(Map<String, Object> record) {
         return new ExampleMenu(
                 (int) record.get("id"),

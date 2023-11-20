@@ -17,7 +17,6 @@ public class MenuController {
     @GetMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public MenusResponse getAll() {
-        //TODO: MenuServiceからメソッドを呼び出して、返り値を修正する
         List<ExampleMenu> menus = service.getAllMenu();
         MenusResponse response = new MenusResponse(menus);
         return response;
