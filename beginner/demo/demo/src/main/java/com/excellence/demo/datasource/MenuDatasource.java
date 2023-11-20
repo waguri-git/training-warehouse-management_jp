@@ -8,7 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 @Repository
 public class MenuDatasource implements MenuRepository {
@@ -18,11 +19,14 @@ public class MenuDatasource implements MenuRepository {
     @Override
     public List<ExampleMenu> getAllMenu() {
         // TODO: SQL文を書いて、jdbcTemplateを使って、DBからデータを取得する
-        String sql = "ここに全てのレコードを取得するSQL文を書く";
-        return null;
+        String sql = "SELECT * FROM Example_menu";
+        List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
+        return records.stream()
+                .map(record -> toModel(record))
+                .collect(toList());
     }
 
-    //　Hint: toModelメソッドは、DBから取得したレコードを宣言されたモデル(ExampleMenu)に変換する
+    //　toModelメソッドは、DBから取得したレコードを宣言されたモデル(ExampleMenu)に変換する
     private ExampleMenu toModel(Map<String, Object> record) {
         return new ExampleMenu(
                 (int) record.get("id"),
