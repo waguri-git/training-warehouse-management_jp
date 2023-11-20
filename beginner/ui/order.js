@@ -31,3 +31,41 @@ function renderOrders(ordersJson) {
         orders.appendChild(orderDiv);
     });
 }
+
+async function handleRegisterOrder(event) {
+    /*
+     * "event.preventDafault()"は、ページのリロードをキャンセルする
+     */
+    event.preventDefault();
+    const form = event.target.form;
+    const formData = new FormData(form);
+    const order = {
+        itemId: formData.get("itemId"),
+        name: formData.get("name"),
+        amount: formData.get("amount"),
+        orderStatus: formData.get("orderStatus"),
+        orderDate: formData.get("orderDate"),
+    };
+
+    /*
+     * ここの"fetch"では、サーバーにPOSTリクエストを送信している
+     * また、ヘッダーで送信するデータのタイプを宣言をし、
+     * ボディで送信するデータを指定している
+     */
+    const response = await fetch("http://localhost:8080/orders", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(order),
+    });
+    if (!response.ok) {
+        const error = await response.json();
+        console.error(error);
+        return;
+    }
+    /*
+     * レスポンスが正常であった場合、再度"fetchOrders()"を実行する
+     */
+    fetchOrders();
+}

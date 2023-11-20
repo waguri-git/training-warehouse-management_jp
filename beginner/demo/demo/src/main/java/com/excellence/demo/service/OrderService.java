@@ -15,7 +15,11 @@ public class OrderService {
         return orders;
     }
 
-    public OrderService(OrderRepository orderRepository) {//コンストラクタ
+    public void createOrder(ExampleOrder order) {
+        orderRepository.insertOrder(order);
+    }
+
+    public OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }
 }

@@ -27,6 +27,34 @@ public class OrderDatasource implements OrderRepository {
                 .collect(toList());
     }
 
+    /*
+     *  今回の場合は、ExampleOrderクラスでもデータベースからのデータを表現できるので、
+     *  Entityクラスを使用しなくてもよいが、
+     *  データベースとモデルを異なる設計にする場合、
+     *  Entityクラスを使用して、データベースからのデータを表すことができる
+     */
+    @Override
+    public void insertOrder(ExampleOrder order) {
+        ExampleOrderEntity entity = ExampleOrderEntity.of(order);
+        String sql = "INSERT INTO example_order(item_id, name, amount, order_status, order_date) VALUES (?, ?, ?, ?, ?)";
+        jdbcTemplate.update(
+                sql,
+                entity.itemId,
+                entity.name,
+                entity.amount,
+                entity.orderStatus.name(),
+                entity.orderDate);
+    }
+    /*
+     *  ExampleOrderEntityクラスがない場合は、以下のようになる
+     *  jdbcTemplate.update(sql,
+     *  order.itemId,
+     *  order.name,
+     *  order.amount,
+     *  order.orderStatus.name(),
+     *  order.orderDate);
+     */
+
     private ExampleOrder toModel(Map<String, Object> record) {
         Date date = (Date) record.get("order_date");
         return new ExampleOrder(
