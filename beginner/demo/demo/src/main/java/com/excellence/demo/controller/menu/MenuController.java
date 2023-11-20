@@ -1,13 +1,11 @@
 package com.excellence.demo.controller.menu;
 
+import com.excellence.demo.controller.menu.request.ExampleMenuRequest;
 import com.excellence.demo.controller.menu.response.MenusResponse;
 import com.excellence.demo.model.ExampleMenu;
 import com.excellence.demo.service.MenuService;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +21,12 @@ public class MenuController {
         List<ExampleMenu> menus = service.getAllMenu();
         MenusResponse response = new MenusResponse(menus);
         return response;
+    }
+
+    @PostMapping(produces = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void create(@RequestBody ExampleMenuRequest request) {
+        // TODO: create()を完成させる
     }
 
     public MenuController(MenuService service) {

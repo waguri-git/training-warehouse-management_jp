@@ -26,3 +26,29 @@ function renderMenus(menusJson) {
         menus.appendChild(menuTable);
     });
 }
+
+async function handleRegisterMenu(event) {
+    event.preventDefault();
+    const form = event.target.form;
+    const formData = new FormData(form);
+    const menu = {
+        id: formData.get("id"),
+        name: formData.get("name"),
+    };
+    
+    // TODO: "fetch"を完成させる
+    const response = await fetch("", {
+        method: "",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: "送信するデータを記述",
+    });
+    if (!response.ok) {
+        const error = await response.json();
+        console.error(error);
+        return;
+    }
+
+    fetchMenus();
+}

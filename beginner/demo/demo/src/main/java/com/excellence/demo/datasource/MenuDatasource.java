@@ -26,6 +26,12 @@ public class MenuDatasource implements MenuRepository {
                 .collect(toList());
     }
 
+    @Override
+    public void insertMenu(ExampleMenu menu) {
+        // TODO: insertMenu()を完成させる
+        String sql = "ここにテーブルにデータを追加するSQL文を書く";
+    }
+
     //　toModelメソッドは、DBから取得したレコードを宣言されたモデル(ExampleMenu)に変換する
     private ExampleMenu toModel(Map<String, Object> record) {
         return new ExampleMenu(

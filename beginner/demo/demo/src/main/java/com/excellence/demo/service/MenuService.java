@@ -15,6 +15,10 @@ public class MenuService {
         return menus;
     }
 
+    public void createMenu(ExampleMenu menu) {
+        repository.insertMenu(menu);
+    }
+
     public MenuService(MenuRepository repository) {
         this.repository = repository;
     }
