@@ -1,12 +1,15 @@
 # Step1 クライアントとサーバー
 
-## 開発ツールのインストール
+## １. 開発ツールのインストール
 
 ### Gitの導入
 
 - `GitHub`の[公式サイト](https://github.co.jp)からアカウントを作成します。
 
-- `Git` を[公式サイト](https://git-scm.com/downloads)からインストールします。
+- `Git` を[公式サイト](https://git-scm.com/downloads)からインストールします。  
+手順の参考 → [Windows](https://www.curict.com/item/60/60bfe0e.html) 、 [Mac](https://zenn.dev/inablog/articles/25f6ac101d0b45)[^1]
+
+[^1]: MacにHomebrewがインストールされていない場合は、[こちら](https://aiacademy.jp/media/?p=2817)を参考にインストールしてください。
 
 - このリポジトリを[Fork](https://docs.github.com/ja/get-started/quickstart/fork-a-repo)します。
 
@@ -26,21 +29,21 @@
   - **インストールの際は、Oracleのアカウントが必要になります。**
 
 - 環境変数を設定します。
-    - Windowsの場合
-      - システムの環境変数の新規をクリック
-      - 変数名：JAVA_HOME
-      - 変数値：{JDKをインストールしたフォルダのパス}
-      - システムの環境変数の Path を編集
-      - [新規(N)]ボタンをクリックし、%JAVA_HOME%\bin を入力
-      - 参考サイトは[こちら](https://itc.tokyo/linux/export-command/)
+  - Windowsの場合
+    - システムの環境変数の新規をクリック
+    - 変数名：JAVA_HOME
+    - 変数値：{JDKをインストールしたフォルダのパス}
+    - システムの環境変数の Path を編集
+    - [新規(N)]ボタンをクリックし、%JAVA_HOME%\bin を入力
+    - 参考サイトは[こちら](https://itc.tokyo/linux/export-command/)
 
-    - Macの場合
-      - `terminal`を起動
-      - `/usr/libexec/java_home -v 11`を入力
-      - 出力されたパスをコピー
-      - `export JAVA_HOME=[コピーしたパス]`を入力
-      - `export PATH=${JAVA_HOME}/bin:${PATH}`を入力
-      - 参考サイトは[こちら](https://qiita.com/niwasawa/items/460ccd0fa0041e7a24911)
+  - Macの場合
+    - `terminal`を起動
+    - `/usr/libexec/java_home -v 11`を入力
+    - 出力されたパスをコピー
+    - `export JAVA_HOME=[コピーしたパス]`を入力
+    - `export PATH=${JAVA_HOME}/bin:${PATH}`を入力
+    - 参考サイトは[こちら](https://qiita.com/niwasawa/items/460ccd0fa0041e7a24911)
 
 
 ### 開発環境のインストール
@@ -52,9 +55,9 @@
 
 - [こちら](https://code.visualstudio.com/)から`VSCode`をインストールします。
   - 下記の拡張機能をインストールしておいて下さい。
-      - HTML CSS Support
-      - Javascript (ES6) code snippets
-      - Live Server
+    - HTML CSS Support
+    - Javascript (ES6) code snippets
+    - Live Server
   - [参考サイト](https://qiita.com/KNR109/items/5f933df1292564e6dc70)
 
 - [こちら](https://docs.docker.com/desktop/install/windows-install/)から`Docker Desktop` をインストールします。
@@ -72,8 +75,8 @@ Tutorialに移る前にDockerを起動しておく必要があります。
 ## クライアントサイドとサーバーサイド
 
 このプロジェクトでは、コードを２つのパートに分割しています。
-- クライアントサイド  
-&nbsp;… クライアントで表示または実行されるWebアプリケーションの全てを指します。今回のプロジェクトでは、HTML, CSS, JavaScriptで記述されています。
+  - クライアントサイド  
+- &nbsp;… クライアントで表示または実行されるWebアプリケーションの全てを指します。今回のプロジェクトでは、HTML, CSS, JavaScriptで記述されています。
 ユーザーが直感的に操作できるようにUIを提供します。
 
 - サーバーサイド  
