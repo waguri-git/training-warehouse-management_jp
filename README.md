@@ -28,10 +28,10 @@
 - 環境変数を設定します。
     - Windowsの場合
       - システムの環境変数の新規をクリック
-      - 変数名：`JAVA_HOME`
-      - 変数値：`{JDKをインストールしたフォルダのパス}`
-      - システムの環境変数の `Path` を編集
-      - [新規(N)]ボタンをクリックし、`%JAVA_HOME%\bin`を入力
+      - 変数名：JAVA_HOME
+      - 変数値：{JDKをインストールしたフォルダのパス}
+      - システムの環境変数の Path を編集
+      - [新規(N)]ボタンをクリックし、%JAVA_HOME%\bin を入力
       - 参考サイトは[こちら](https://itc.tokyo/linux/export-command/)
 
     - Macの場合
@@ -46,8 +46,8 @@
 ### 開発環境のインストール
 
 - [こちら](https://www.jetbrains.com/ja-jp/idea/download/other.html)から`Intellij IDEA Community Edition`をインストールします。
-  - File -> New -> Project -> Project from existing source -> `beginner/demo/demo` -> import project from external model -> `Gradle` -> Create
-  - files -> Project Structure -> Platform Settings -> SDKs -> `11`を選択してください -> OK
+  - File -> New -> Project -> Project from existing source -> beginner/demo/demo -> import project from external model -> Gradleを選択 -> Create
+  - files -> Project Structure -> Platform Settings -> SDKs -> 11を選択してください -> OK
   - [参考画像](https://github.com/amajakai14/training-warehouse-management/blob/step1-client-and-server/intellij.md)
 
 - [こちら](https://code.visualstudio.com/)から`VSCode`をインストールします。
@@ -64,7 +64,7 @@
 
 Tutorialに移る前にDockerを起動しておく必要があります。
 - `Git Bash`もしくは `terminal`を起動します。
-- `cd`コマンドで `training-warehouse-management-JP` に移動します。  
+- `cd`コマンドで training-warehouse-management-JPフォルダ に移動します。  
 - こちらのコマンドを入力し、.shファイルを実行して下さい。
   `./beginner/demo/demo/local/start.sh`  
   .shファイルの詳しい実行方法については[こちら](https://linuxfan.info/post-1486)を参考にして下さい。
@@ -89,25 +89,25 @@ Javaコードは`IntelliJ`で、HTML,javascript,cssは`VScode`で編集しまし
 ますは、サーバーを立ち上げましょう。  
 intellijを起動 -> open -> training-warehouse-management-JP/beginner/demo/demo
 
-`DemoApplication.java`を右クリック -> `Run DemoApplication.main()`  
+DemoApplication.javaを右クリック -> Run DemoApplication.main()  
 terminalで
 `Tomcat started on port(s): 8080 (http)`
 と表示されれば、成功です。  
-ブラウザで`localhost:8080/hello` と入力すると、
+ブラウザで localhost:8080/hello と入力すると、
 メッセージが表示されるはずです。
 
 vscodeを起動 -> open -> training-warehouse-management-JP/beginner/ui  
-`index.html`を右クリック -> `Open with Live Server`  
+index.htmlを右クリック -> Open with Live Server  
 ブラウザでHTMLファイルが開きます。  
 ３つのボタンをクリックして、何が表示されるか見てみましょう。
 
-次に`index.js`ファイルを開き、コードを読んでみましょう。  
+次にindex.jsファイルを開き、コードを読んでみましょう。  
 ヒント :
  - 左のボタンは、Javaからのメッセージです。
-`/beginner/demo/demo/src/main/java/controller.HelloController.java` を見ると良いでしょう。 
+/beginner/demo/demo/src/main/java/controller.HelloController.java を見ると良いでしょう。 
  - 真ん中のボタンは、JavaScriptからのメッセージです。  
-`index.js`の1行目~3行目を見ると良いでしょう。
+index.jsの1行目~3行目を見ると良いでしょう。
 
 ## Exercise
-`index.js`の`helloExercise()`を編集し、
-`ExerciseController.java`からのメッセージを表示させてみましょう。
+index.jsのhelloExercise()を編集し、
+ExerciseController.javaからのメッセージを表示させてみましょう。
