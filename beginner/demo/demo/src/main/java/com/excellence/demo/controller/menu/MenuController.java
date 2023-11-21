@@ -54,6 +54,12 @@ public class MenuController {
         service.updateMenu(request.toExampleMenu(id));
     }
 
+    public void delete() {
+        // TODO: 削除の一連の処理を完成させる
+        // Hint: コードを追加しなければならないクラスは
+        //       MenuController, MenuService, MenuRepository, MenuDatasourceの4つ
+    }
+
     public MenuController(MenuService service) {
         this.service = service;
     }
