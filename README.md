@@ -1,26 +1,20 @@
-# Fourth lesson
-
-## Add Data that into Database
-
-#### Learn this before go through tutorial
-
-- learn more about Eventlistener [here](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
+# Step4 データの更新
 
 ### Tutorial
 
-run our `DemoApplication` once again
+`DemoApplication`を起動しましょう
 
-open `order.html` file
+`order.html`を開きましょう。
 
-#### What's added
-
-- autoload to show order table
-- edit buttons for each row have been added
-- A Pop Up screen to see each order by clicking `edit` button
-- Edit function that send a edit request to server
-
-let's try edit Order name amount or even date
+テーブルにEditボタンが追加されています。
+Editボタンを押すと、何が起こるか見てみましょう。
+また、テーブルを表示するボタンがなくなっているのに気付いたでしょうか？なぜ、ボタンがなくてもテーブルが表示されるのかコードをしっかり確認してください。
 
 ### Exercise
+データベースのデータを更新する機能を実装しましょう。
+今回は２つの処理を実装しなければいけません。
+  - 特定のidを持つレコードの参照
+  
+  - そのレコードのデータの更新  
 
-make the update menu function work
+各クラスに、TODOコメントが書いてあります。TODOを完了して、機能の完成を目指してください。
