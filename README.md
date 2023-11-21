@@ -1,29 +1,20 @@
-# step5 データベースの削除
-## チュートリアル
+# step5 データの削除
 
-もう一度 `DemoApplication` を実行する。
+### Tutorial
 
-`order.html` ファイルを開く。
+`DemoApplication`を起動しましょう。
 
-### 今回の課題
+`order.html` ファイルを開きましょう。
 
-`order.html`に削除ボタンが追加されています。そのボタンを動作させてみましょう。
+Editボタンの隣にDeleteボタンが追加されています。
+押すと何が起こるか確認してください。
 
-step3.4で行った動作を思い出し、活用しながら進めてください。
+### Exercise
 
-[HINT]
+データを削除する機能を実装しましょう
 
-- [asyncについて](https://qiita.com/soarflat/items/1a9613e023200bbebcb3)
-- [メソッドと削除処理](https://midorigame-jo.com/spring-requestmapping/)
-- [↑関連資料](https://qiita.com/soarflat/items/1a9613e023200bbebcb3)
- 
-最後のステップに行く前に、基礎的なことをもう一度思い出しましょう
+今までのStepを思い出し、得た知識を活用しながら進めてください。
 
-- [APIとは](https://aws.amazon.com/what-is/api/)
-- [Gitとは](https://www.sejuku.net/blog/5756)
-- [HTMLとCSS](https://fastcoding.jp/blog/all/jquery/html-css-javascript/)
-- [↑こちらも参考に](https://www.pc-master.jp/words/html-css.html)
-- [Javascript](https://www.javadrive.jp/javascript/)
 
 ### EXTRA
 
