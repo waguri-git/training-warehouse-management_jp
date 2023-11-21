@@ -1,35 +1,43 @@
-# Fifth lesson
+# step5 データベースの削除
+## チュートリアル
 
-## Add Data that into Database
+もう一度 `DemoApplication` を実行する。
 
-### Tutorial
+`order.html` ファイルを開く。
 
-run our `DemoApplication` once again
+### 今回の課題
 
-open `order.html` file
+`order.html`に削除ボタンが追加されています。そのボタンを動作させてみましょう。
 
-### Exercise
+step3.4で行った動作を思い出し、活用しながら進めてください。
 
-there's should be a delete button added to the table try to make that button work  
-this should be very easy now
+[HINT]
 
----
+- [asyncについて](https://qiita.com/soarflat/items/1a9613e023200bbebcb3)
+- [メソッドと削除処理](https://midorigame-jo.com/spring-requestmapping/)
+- [↑関連資料](https://qiita.com/soarflat/items/1a9613e023200bbebcb3)
+ 
+最後のステップに行く前に、基礎的なことをもう一度思い出しましょう
 
-### Congratulations!
+- [APIとは](https://aws.amazon.com/what-is/api/)
+- [Gitとは](https://www.sejuku.net/blog/5756)
+- [HTMLとCSS](https://fastcoding.jp/blog/all/jquery/html-css-javascript/)
+- [↑こちらも参考に](https://www.pc-master.jp/words/html-css.html)
+- [Javascript](https://www.javadrive.jp/javascript/)
 
-now you have learnt all CRUD method  
-Now let's take a break, learning a fundamental before we go to the last step
+### EXTRA
 
-- [What is API](https://aws.amazon.com/what-is/api/)
-- [What is Git](https://www.youtube.com/watch?v=NcoBAfJ6l2Q&t=1s)
-- [HTML and Css](https://www.youtube.com/watch?v=zFZrkCIc2Oc&t=1s)
-- [Javascript](https://www.youtube.com/watch?v=x5trGVMKTdY&t=6073s)
+- この[説明](https://yu-report.com/entry/postman/)に従ってPostmanをインストールします。
+  - [POSTMANの使用例](https://rainbow-engine.com/postman-howto-intro/)
+  
+   POSTMANとは？
+   
+   =APIのテストを行うためのツール。
 
-### Extra Exercise
-
-- Install Postman following this [instruction](https://yu-report.com/entry/postman/)
-  - Optional [Example of using POSTMAN](https://www.youtube.com/watch?v=CLG0ha_a0q8)
-  - now try to access java server using `POSTMAN`
-    - like `fetch` function we add `URL endpoint` and `HTTP METHOD` and if needed a `JSON` BODY
-    - let's try to hit all CRUD Service from `JAVA` application
-      - For Example `http://localhost:8080/orders/1` will get you a order record that have id = 1
+　  手早くHTTPリクエストを送信してエンドポイントが正しく機能しているか確認することができます。
+  - 今度は`POSTMAN`を使ってJavaサーバーにアクセスしてみましょう。
+    `fetch` 関数のように、`URL endpoint` と `HTTP METHOD` を追加し、必要に応じて `JSON` BODY を追加する。
+    
+    JAVAアプリケーションからすべてのCRUDサービスにアクセスする。
+      
+    例えば、`http://localhost:8080/orders/1`は、id = 1の注文レコードを取得する。
