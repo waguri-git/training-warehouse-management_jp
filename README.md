@@ -11,9 +11,9 @@
 - このリポジトリを[Fork](https://docs.github.com/ja/get-started/quickstart/fork-a-repo)します。
 
 - ローカル上の任意の場所にリポジトリのクローンを作成します。  
-&emsp;&ensp;1:&ensp;`Git Bash`もしくは `terminal`を起動します。  
-&emsp;&ensp;2:&ensp;`cd` コマンドでリポジトリをクローンしたいフォルダに移動します。  
-&emsp;&ensp;3:&ensp;`git clone {リポジトリのURL}`&nbsp;を入力
+  - `Git Bash`もしくは `terminal`を起動します。  
+  - `cd` コマンドでリポジトリをクローンしたいフォルダに移動します。  
+  - `git clone {リポジトリのURL}`&nbsp;を入力
 - `Fork` を[こちら](https://git-fork.com/)からインストールします。
   - Forkの使い方は[こちら](https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3)
   - step1にbranchを切り替えておいてください
