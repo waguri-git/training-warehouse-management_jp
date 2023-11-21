@@ -4,16 +4,15 @@
 
 ### Gitの導入
 
-- `GitHub`の[公式サイト](https://github.co.jp)からアカウントを作成し、リポジトリにアクセスします。
+- `GitHub`の[公式サイト](https://github.co.jp)からアカウントを作成します。
 - `Git` を[公式サイト](https://git-scm.com/downloads)からインストールします。
-  - Windowsの方は `Git Bash`もインストールします。
 - このリポジトリを[Fork](https://docs.github.com/ja/get-started/quickstart/fork-a-repo)します。
 - ローカル上の任意の場所にリポジトリのクローンを作成します。
-  - `git bash`もしくは `terminal`を起動します。
+  - `Git Bash`もしくは `terminal`を起動します。
   - `cd` コマンドでリポジトリをクローンしたいフォルダに移動します。  
     `cd`コマンドの使い方や`linux`でよく使うコマンドについては[こちら](https://qiita.com/arene-calix/items/41d8d4ba572f1d652727)を参考にして下さい。
   - 下記のコマンドを入力して下さい。  
-    `git clone [リポジトリのURL]`
+    `git clone https://github.com/Git-MuramatsuT/training-warehouse-management-JP`
 - `Fork` を[こちら](https://git-fork.com/)からインストールします。
   - Forkの使い方は[こちら](https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3)
 
@@ -36,9 +35,9 @@
 
 - [こちら](https://www.jetbrains.com/idea/download/#section=windows)から`Intellij` をインストールします。
 - `Intellij`の設定
-  - File -> New Project -> Project from existing source -> `beginner/demo/demo` -> import project from external model -> `Gradle`
-  - files -> Project Structure -> SDK -> select sdk version 11 from the one you downloaded above
-  - [faq](https://github.com/amajakai14/training-warehouse-management/tree/step1-client-and-server/faq)
+  - File -> New -> Project -> Project from existing source -> `beginner/demo/demo` -> import project from external model -> `Gradle` -> Create
+  - files -> Project Structure -> Platform Settings -> SDKs -> `11`を選択してください -> OK
+  - [参考](https://github.com/amajakai14/training-warehouse-management/tree/step1-client-and-server/)
 - [こちら](https://code.visualstudio.com/)から`VSCode`をインストールします。
   - 下記の拡張機能をインストールしておいて下さい。（
   [参考サイト](https://qiita.com/KNR109/items/5f933df1292564e6dc70)）
