@@ -1,7 +1,3 @@
-/* 
- * TODO: addEventListenerを使って、ボタンを押さなくても
- * DOM読み込み後に、fetchMenus()が呼び出されるようにする
- */
 document.addEventListener("DOMContentLoaded", fetchMenus());
 
 async function fetchMenus() {
@@ -85,7 +81,6 @@ async function renderMenu(id) {
 
 async function handleUpdateMenu(event, id) {
     event.preventDefault();
-    //TODO: handleUpdateOrderを参考に完成させる
     const form = event.target.form;
     const formData = new FormData(form);
     const menu = {
@@ -109,3 +104,8 @@ async function handleUpdateMenu(event, id) {
     }
 }
 
+/* 
+ * TODO: サーバーにDeleteリクエストを送るためのhandleDeleteMenu()を完成させる
+ *       テーブルには削除ボタンが表示されるようにし、
+ *       ボタン押下時にhandleDeleteMenu()が実行されるようにする
+ */
