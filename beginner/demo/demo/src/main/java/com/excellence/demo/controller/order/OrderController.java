@@ -35,10 +35,6 @@ public class OrderController {
         service.createOrder(request.toExampleOrder());
     }
 
-    /*
-     * GETで特定のidを持つデータを取得し、
-     * PUTでデータを更新する
-     */
     @GetMapping(value = "/{orderId}", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public ExampleOrder get(@PathVariable int orderId) {

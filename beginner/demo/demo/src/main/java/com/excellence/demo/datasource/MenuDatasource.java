@@ -38,7 +38,6 @@ public class MenuDatasource implements MenuRepository {
 
     @Override
     public void updateMenu(ExampleMenu menu) {
-        /* TODO: updateMenuを完成させる */
         ExampleMenuEntity entity = ExampleMenuEntity.of(menu);
         String sql = "UPDATE example_menu SET name = ? WHERE id = ?";
         jdbcTemplate.update(
@@ -50,7 +49,6 @@ public class MenuDatasource implements MenuRepository {
 
     @Override
     public ExampleMenu getMenu(int id) {
-        /* TODO: 適切なSQL文を書いて、getMenu()を完成させる */
         String sql = "SELECT * FROM example_menu WHERE id = ?";
         List<Map<String, Object>> records = jdbcTemplate.queryForList(sql, id);
         if (records.isEmpty()) return ExampleMenu.empty();
