@@ -56,6 +56,12 @@ public class OrderController {
         service.updateOrder(request.toExampleOrder(orderId));
     }
 
+    @DeleteMapping(value = "/{orderId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable int orderId) {
+        service.deleteOrder(orderId);
+    }
+
 
     public OrderController(OrderService service) {
         this.service = service;
