@@ -1,4 +1,4 @@
-# 研修　Step1
+# Step1 クライアントとサーバー
 
 ## 開発ツールのインストール
 
@@ -69,24 +69,25 @@ Tutorialに移る前にDockerを起動しておく必要があります。
   `./beginner/demo/demo/local/start.sh`  
   .shファイルの詳しい実行方法については[こちら](https://linuxfan.info/post-1486)を参考にして下さい。
 
-## クライアントとサーバー
+## クライアントサイドとサーバーサイド
 
 このプロジェクトでは、コードを２つのパートに分割しています。
-- クライアント  
-&nbsp;… クライアント側は、HTML ,CSS ,JavaScriptで書かれています。
-- サーバー  
-&nbsp;… サーバー側は、今回のプロジェクトでは、Javaで書かれています。
+- クライアントサイド 
+&nbsp;… クライアントで表示または実行されるWebアプリケーションの全てを指します。今回のプロジェクトでは、HTML, CSS, JavaScriptで記述されています。
+ユーザーが直感的に操作できるようにUIを提供します。
 
-### クライアントとサーバーに分割する理由
-- 通常、クライアント側では、クライアント（サービスを利用する人）がデータの閲覧、追加、更新、削除などのデータの操作を行います。我々は、ユーザーが画面を使って操作できるようにUIを提供します。
-- 一方、サーバー側は、クライアント側から送られてきたストレージへのアクションを受け取ります。（このプロジェクトでは、ストレージにPostgresデータベースを利用します。）
+- サーバーサイド  
+&nbsp;… サーバーで動くプログラムなどを指します。
+今回のプロジェクトでは、Javaで記述されています。
+クライアント側から送られてきたアクションを受け取り、ストレージへのデータの保存などを行います。
+（このプロジェクトでは、ストレージにPostgresデータベースを利用します。）
 
 
 ## Tutorial
 Javaコードは`IntelliJ`で、HTML,javascript,cssは`VScode`で編集しましょう。
 
 ますは、サーバーを立ち上げましょう。  
-intellijを開く -> open -> training-warehouse-management-JP/beginner/demo/demo
+intellijを起動 -> open -> training-warehouse-management-JP/beginner/demo/demo
 
 `DemoApplication.java`を右クリック -> `Run DemoApplication.main()`  
 terminalで
@@ -95,7 +96,7 @@ terminalで
 ブラウザで`localhost:8080/hello` と入力すると、
 メッセージが表示されるはずです。
 
-vscodeを開く -> open -> training-warehouse-management-JP/beginner/ui  
+vscodeを起動 -> open -> training-warehouse-management-JP/beginner/ui  
 `index.html`を右クリック -> `Open with Live Server`  
 ブラウザでHTMLファイルが開きます。  
 ３つのボタンをクリックして、何が表示されるか見てみましょう。
