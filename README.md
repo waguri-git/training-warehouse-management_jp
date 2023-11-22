@@ -17,18 +17,27 @@ Dockerが起動していなければ、起動させておきましょう。
 
 - [こちら](https://www.pgadmin.org/download/)から`PGAdmin4`をインストールします。
   - [インストール方法](https://qiita.com/pyon_kiti_jp/items/01d6150e46bd66be29f0)
+
 - インストール後
   - Serversを右クリック -> Register -> Server...
-  - -> `General`タブのNameに `warehouse` を入力
-  - -> `Connection`タブのHost name/addressに `localhost` , Portに `5432` , Maintenance databaseに `warehouse` , Usernameに `warehouseuser` , Passwordに `warehousepassword` -> savepassword?を `ON` 
+  - `General`タブ  
+  Name:&ensp;`warehouse`
+  - `Connection`タブ  
+  Host name/address:&ensp; `localhost` ,  
+  Port:&ensp; `5432` ,  
+  Maintenance database:&ensp; `warehouse` ,  
+  Username:&ensp; `warehouseuser` ,  
+  Password:&ensp; `warehousepassword`  
+  savepassword?:&ensp; `ON` 
   - -> `Save` をクリック
+
 - `Intellij`で`DemoApplication`をRun
   - pgAdmin4で Servers -> warehouse -> Databases -> warehouse -> Schemas -> public -> Tables -> example_menuを右クリック -> View/Edit Data -> All Rows -> 用意されたデータが表示されます。
   これらをTutorialで使用します。
 
 ## 2. Tutorial
 
-`DemoApplication`を実行しましょう。
+`DemoApplication`をrunしましょう。
 
 `order.html`ファイルを開き、ボタンをクリックすると、`example_order`と同じデータが表示されます。
 `order.js`ファイルを見てみましょう。  
@@ -37,16 +46,16 @@ Dockerが起動していなければ、起動させておきましょう。
 `Intellij`を見ると、いくつかのファイルとフォルダが追加されていると思います。  
 それぞれのフォルダの意味を説明しておきます。
 
-- Controller
-  - Controllerは、クライアントとの架け橋です。クライアントがリクエストを送信すると、まずControllerに送信され、処理が完了すると、クライアントに返信されます。
-- Service
-  - Serviceは、このアプリケーションがどのような処理を行うかを決定するものです。今回の例では、全ての注文を得ることができます。
-- Repository
-  - Repositoryは、複雑なコードを隠すことができるインターフェースです。インターフェースの活用はコードをよりシンプルに、見やすくすることができます。
-- Datasource
-  - Datasourceは、Repositoryから複雑なコードを実装するものです。今回の例では、データベースに接続し、SQL文を実行します。
-- Model
-  - Modelは、このアプリケーションにどのようなデータの型があるかを宣言します。
+- Controller  
+… Controllerは、クライアントとの架け橋です。クライアントがリクエストを送信すると、まずControllerに送信され、処理が完了すると、クライアントに返信されます。
+- Service  
+… Serviceは、このアプリケーションがどのような処理を行うかを決定するものです。今回の例では、全ての注文を得ることができます。
+- Repository  
+… Repositoryは、複雑なコードを隠すことができるインターフェースです。インターフェースの活用はコードをよりシンプルに、見やすくすることができます。
+- Datasource  
+… Datasourceは、Repositoryから複雑なコードを実装するものです。今回の例では、データベースに接続し、SQL文を実行します。
+- Model  
+… Modelは、このアプリケーションにどのようなデータの型があるかを宣言します。
 
 それぞれのクラスがどのように繋がっているのかを、理解しましょう。
 
