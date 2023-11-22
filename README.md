@@ -1,5 +1,7 @@
 # Step2  データの参照
 
+## 1. データベースの確認
+
 ### データベースの起動
 
 Dockerが起動していなければ、起動させておきましょう。  
@@ -24,7 +26,7 @@ Dockerが起動していなければ、起動させておきましょう。
   - pgAdmin4で Servers -> warehouse -> Databases -> warehouse -> Schemas -> public -> Tables -> example_menuを右クリック -> View/Edit Data -> All Rows -> 用意されたデータが表示されます。
   これらをTutorialで使用します。
 
-## Tutorial
+## 2. Tutorial
 
 `DemoApplication`を実行しましょう。
 
@@ -48,7 +50,7 @@ Dockerが起動していなければ、起動させておきましょう。
 
 それぞれのクラスがどのように繋がっているのかを、理解しましょう。
 
-## Exercise
+## 3. Exercise
 
 `exercise_html`ファイルを開くと、`get menus`ボタンがあると思います。  
 ボタンを押すと、`example_menu`のテーブルが表示されるようにしましょう。  
