@@ -100,7 +100,7 @@ terminalで
 ブラウザで localhost:8080/hello と入力すると、
 メッセージが表示されるはずです。
 
-2. UIを表示しましょう
+2. UIを表示しましょう  
 vscodeを起動 -> open -> `training-warehouse-management-JP/beginner/ui`  index.htmlを右クリック -> Open with Live Server  
 ブラウザでHTMLファイルが開きます。  
 3つのボタンをクリックして、何が表示されるか見てみましょう。
