@@ -74,7 +74,7 @@ Tutorialに移る前にDockerを起動しておく必要があります。
   `./beginner/demo/demo/local/start.sh`  
   .shファイルの詳しい実行方法については[こちら](https://linuxfan.info/post-1486)を参考にして下さい。
 
-## クライアントサイドとサーバーサイド
+## 2. クライアントサイドとサーバーサイド
 
 このプロジェクトでは、コードを２つのパートに分割しています。
 - クライアントサイド  
@@ -88,7 +88,7 @@ Tutorialに移る前にDockerを起動しておく必要があります。
 （このプロジェクトでは、ストレージにPostgresデータベースを利用します。）
 
 
-## Tutorial
+## 3. Tutorial
 Javaは`IntelliJ`で、HTML、JavaScript、CSSは`VSCode`で編集しましょう。
 
 1. サーバーを立ち上げましょう。  
@@ -111,6 +111,6 @@ vscodeを起動 -> open -> `training-warehouse-management-JP/beginner/ui`  index
 - 真ん中のボタンは、JavaScriptからのメッセージです。  
 index.jsの1行目~3行目を見ると良いでしょう。
 
-## Exercise
+## 4. Exercise
 index.jsのhelloExercise()を編集し、
 ExerciseController.javaからのメッセージを表示させてみましょう。
