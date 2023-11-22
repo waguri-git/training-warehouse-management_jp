@@ -91,9 +91,8 @@ Tutorialに移る前にDockerを起動しておく必要があります。
 ## Tutorial
 Javaは`IntelliJ`で、HTML、JavaScript、CSSは`VSCode`で編集しましょう。
 
-ますは、サーバーを立ち上げましょう。  
-intellijを起動 -> open -> training-warehouse-management-JP/beginner/demo/demo
-
+1. サーバーを立ち上げましょう。  
+intellijを起動 -> open -> `training-warehouse-management-JP/beginner/demo/demo`  
 DemoApplication.javaを右クリック -> Run DemoApplication.main()  
 terminalで
 `Tomcat started on port(s): 8080 (http)`
@@ -101,16 +100,15 @@ terminalで
 ブラウザで localhost:8080/hello と入力すると、
 メッセージが表示されるはずです。
 
-vscodeを起動 -> open -> training-warehouse-management-JP/beginner/ui  
-index.htmlを右クリック -> Open with Live Server  
+2. UIを表示しましょう
+vscodeを起動 -> open -> `training-warehouse-management-JP/beginner/ui`  index.htmlを右クリック -> Open with Live Server  
 ブラウザでHTMLファイルが開きます。  
-３つのボタンをクリックして、何が表示されるか見てみましょう。
+3つのボタンをクリックして、何が表示されるか見てみましょう。
 
-次にindex.jsファイルを開き、コードを読んでみましょう。  
-ヒント :
- - 左のボタンは、Javaからのメッセージです。
+3. index.jsファイルを開き、コードを読んでみましょう。  
+- 左のボタンは、Javaからのメッセージです。
 /beginner/demo/demo/src/main/java/controller.HelloController.java を見ると良いでしょう。 
- - 真ん中のボタンは、JavaScriptからのメッセージです。  
+- 真ん中のボタンは、JavaScriptからのメッセージです。  
 index.jsの1行目~3行目を見ると良いでしょう。
 
 ## Exercise
