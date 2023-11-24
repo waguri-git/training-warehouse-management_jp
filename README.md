@@ -108,10 +108,6 @@ terminalで
 3. `index.html`と`index.js`のコードを見て、HTML, JavaScriptの基本を学びましょう。
 補助資料のp10~p14には、HTML及びJavaScriptの基本について書かれています。参考にしながら、`index.html`や`index.js`には、どのようなことが書かれているのかコードを解読してください。
 
-4.  以下の指示が達成できるようにコードを書き換えてみましょう。  
-- `Click me to get hello from Client`をクリックしたときのメッセージを`JavaScriptからのメッセージです`に変更。
-- `Click me to get hello from Server Side`をクリックしたときのを`Javaからのメッセージです`に変更。
-
 
 ## 4. Exercise
 `Make me Show the message from Java`をクリックしたときに、表示されるメッセージを`ExerciseController.java`からのものに変更してください。  
