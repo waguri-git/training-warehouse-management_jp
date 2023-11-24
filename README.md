@@ -20,9 +20,9 @@ Dockerが起動していなければ、起動させておきましょう。
 
 - インストール後
   - Serversを右クリック -> Register -> Server...
-  - `General`タブ  
+  - Generalタブ  
   Name:&ensp;`warehouse`
-  - `Connection`タブ  
+  - Connectionタブ  
   Host name/address:&ensp; `localhost` ,  
   Port:&ensp; `5432` ,  
   Maintenance database:&ensp; `warehouse` ,  
@@ -32,32 +32,39 @@ Dockerが起動していなければ、起動させておきましょう。
   - -> `Save` をクリック
 
 - `Intellij`で`DemoApplication`をRun
-  - pgAdmin4で Servers -> warehouse -> Databases -> warehouse -> Schemas -> public -> Tables -> example_menuを右クリック -> View/Edit Data -> All Rows -> 用意されたデータが表示されます。
+  - pgAdmin4で Servers -> warehouse -> Databases -> warehouse -> Schemas -> public -> Tables -> example_orderを右クリック -> View/Edit Data -> All Rows -> 用意されたデータが表示されます。  
   これらをTutorialで使用します。
 
 ## 2. Tutorial
 
-`DemoApplication`をrunしましょう。
+1. 動作の確認  
+`DemoApplication`をRunしましょう。  
+`order.html`ファイルをブラウザで開き、表示された`get orders`ボタンをクリックすると、`example_order`と同じデータが表示されます。
 
-`order.html`ファイルを開き、ボタンをクリックすると、`example_order`と同じデータが表示されます。
-`order.js`ファイルを見てみましょう。  
-サーバーの呼び出しがあります。
+2. クライアントサイドのコードリーディング  
+`order.js`ファイルを見て、どのように表が出力されているかを確認しましょう。  
 
-`Intellij`を見ると、いくつかのファイルとフォルダが追加されていると思います。  
-それぞれのフォルダの意味を説明しておきます。
+3. サーバーサイドのコードリーディング  
+`Intellij`を見ましょう。
+いくつかのファイルとフォルダが追加されていると思います。  
+それぞれのフォルダの意味を説明しておきます。 
 
-- Controller  
-… Controllerは、クライアントとの架け橋です。クライアントがリクエストを送信すると、まずControllerに送信され、処理が完了すると、クライアントに返信されます。
-- Service  
-… Serviceは、このアプリケーションがどのような処理を行うかを決定するものです。今回の例では、全ての注文を得ることができます。
-- Repository  
-… Repositoryは、複雑なコードを隠すことができるインターフェースです。インターフェースの活用はコードをよりシンプルに、見やすくすることができます。
-- Datasource  
-… Datasourceは、Repositoryから複雑なコードを実装するものです。今回の例では、データベースに接続し、SQL文を実行します。
-- Model  
-… Modelは、このアプリケーションにどのようなデータの型があるかを宣言します。
+   - Controller  
+   … Controllerは、クライアントとの架け橋です。クライアントがリクエストを送信すると、まずControllerに送信され、処理が完了すると、クライアントに返信されます。
 
-それぞれのクラスがどのように繋がっているのかを、理解しましょう。
+   - Service  
+   … Serviceは、このアプリケーションがどのような処理を行うかを決定するものです。今回の例では、全ての注文を得ることができます。
+
+   - Repository  
+   … Repositoryは、複雑なコードを隠すことができるインターフェースです。インターフェースの活用はコードをよりシンプルに、見やすくすることができます。
+
+   - Datasource  
+   … Datasourceは、Repositoryから複雑なコードを実装するものです。今回の例では、データベースに接続し、SQL文を実行します。
+
+   - Model  
+   … Modelは、このアプリケーションにどのようなデータの型があるかを宣言します。  
+
+   クラスがどのようにつながっているかを理解しましょう。
 
 ## 3. Exercise
 
