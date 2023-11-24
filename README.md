@@ -50,7 +50,7 @@
 
 - [こちら](https://www.jetbrains.com/ja-jp/idea/download/other.html)から`Intellij IDEA Community Edition`をインストールします。
   - File -> New -> Project -> Project from existing source -> `beginner/demo/demo` -> import project from external model -> Gradleを選択 -> Create
-  - files -> Project Structure -> Platform Settings -> SDKs -> 11を選択してください -> OK
+  - files -> Project Structure -> Platform Settings -> SDKs -> 11を選択 -> OK
   - [参考画像](https://github.com/amajakai14/training-warehouse-management/blob/step1-client-and-server/intellij.md)
 
 - [こちら](https://code.visualstudio.com/)から`VSCode`をインストールします。
@@ -92,7 +92,7 @@ Tutorialに移る前にDockerを起動しておく必要があります。
 Javaは`IntelliJ`で、HTML、JavaScript、CSSは`VSCode`で編集しましょう。
 
 1. サーバーを立ち上げましょう。  
-intellijを起動 -> open -> `training-warehouse-management-JP/beginner/demo/demo`  
+`IntelliJ`を起動 -> open -> `training-warehouse-management_jp/beginner/demo/demo`  
 DemoApplication.javaを右クリック -> Run DemoApplication.main()  
 terminalで
 `Tomcat started on port(s): 8080 (http)`
@@ -101,16 +101,16 @@ terminalで
 メッセージが表示されるはずです。
 
 2. UIを表示しましょう  
-vscodeを起動 -> open -> `training-warehouse-management-JP/beginner/ui`  index.htmlを右クリック -> Open with Live Server  
+`VSCode`を起動 -> open -> `training-warehouse-management_jp/beginner/ui`  `index.html`を右クリック -> Open with Live Server  
 ブラウザでHTMLファイルが開きます。  
 3つのボタンをクリックして、何が表示されるか見てみましょう。
 
-3. index.jsファイルを開き、コードを読んでみましょう。  
+3. `index.js`を開き、コードを読んでみましょう。  
 - 左のボタンは、Javaからのメッセージです。
-/beginner/demo/demo/src/main/java/controller.HelloController.java を見ると良いでしょう。 
+`/beginner/demo/demo/src/main/java/controller.HelloController.java` を見ると良いでしょう。 
 - 真ん中のボタンは、JavaScriptからのメッセージです。  
-index.jsの1行目~3行目を見ると良いでしょう。
+`index.js`の1行目~3行目を見ると良いでしょう。
 
 ## 4. Exercise
-index.jsのhelloExercise()を編集し、
-ExerciseController.javaからのメッセージを表示させてみましょう。
+`index.js`の`helloExercise()`を編集し、
+`ExerciseController.java`からのメッセージを表示させてみましょう。
