@@ -101,16 +101,18 @@ terminalで
 メッセージが表示されるはずです。
 
 2. UIを表示しましょう  
-`VSCode`を起動 -> open -> `training-warehouse-management_jp/beginner/ui`  `index.html`を右クリック -> Open with Live Server  
+`VSCode`を起動 -> open -> `training-warehouse-management_jp/beginner/ui` -> `index.html`を右クリック -> Open with Live Server  
 ブラウザでHTMLファイルが開きます。  
 3つのボタンをクリックして、何が表示されるか見てみましょう。
 
-3. `index.js`を開き、コードを読んでみましょう。  
-- 左のボタンは、Javaからのメッセージです。
-`/beginner/demo/demo/src/main/java/controller.HelloController.java` を見ると良いでしょう。 
-- 真ん中のボタンは、JavaScriptからのメッセージです。  
-`index.js`の1行目~3行目を見ると良いでしょう。
+3. `index.html`と`index.js`のコードを見て、HTML, JavaScriptの基本を学びましょう。
+補助資料のp10~p14には、HTML及びJavaScriptの基本について書かれています。参考にしながら、`index.html`や`index.js`には、どのようなことが書かれているのかコードを解読してください。
+
+4.  以下の指示が達成できるようにコードを書き換えてみましょう。  
+- `Click me to get hello from Client`をクリックしたときのメッセージを`JavaScriptからのメッセージです`に変更。
+- `Click me to get hello from Server Side`をクリックしたときのを`Javaからのメッセージです`に変更。
+
 
 ## 4. Exercise
-`index.js`の`helloExercise()`を編集し、
-`ExerciseController.java`からのメッセージを表示させてみましょう。
+`Make me Show the message from Java`をクリックしたときに、表示されるメッセージを`ExerciseController.java`からのものに変更してください。  
+ヒント：`index.js`の`helloExercise()`を編集する必要があります。どのエンドポイントにリクエストを送れば、`ExerciseController.java`からのレスポンスが返ってくるのかを考えましょう。
