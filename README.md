@@ -1,6 +1,6 @@
 # Step1 クライアントとサーバー
 
-## １. 開発ツールのインストール
+## １. 開発環境の構築
 
 ### Gitの導入
 
@@ -46,7 +46,7 @@
     - 参考サイトは[こちら](https://qiita.com/niwasawa/items/460ccd0fa0041e7a2491)
 
 
-### 開発環境のインストール
+### IntellijとVSCodeのインストール
 
 - [こちら](https://www.jetbrains.com/ja-jp/idea/download/other.html)から`Intellij IDEA Community Edition`をインストールします。
   - File -> New -> Project -> Project from existing source -> `beginner/demo/demo` -> import project from external model -> Gradleを選択 -> Create
@@ -60,17 +60,17 @@
     - Live Server
   - [参考サイト](https://qiita.com/KNR109/items/5f933df1292564e6dc70)
 
+### Dockerのインストール
+
 - [こちら](https://docs.docker.com/desktop/install/windows-install/)から`Docker Desktop`[^2] をインストールします。
   - [参考サイト](https://www.kagoya.jp/howto/cloud/container/wsl2_docker/)
 
 [^2]: `Docker Desktop`を起動する前に、WSL Linuxカーネルを更新しなければいけない場合があります(Windows)。[こちら](https://kb.seeck.jp/archives/16956)を参考に更新してください。
 
-### データベースの起動
-
-Tutorialに移る前にDockerを起動しておく必要があります。
-1. `Git Bash`もしくは `terminal`を起動します。
-2. `cd`コマンドで クローンしたプロジェクト に移動します。  
-3. こちらのコマンドを入力し、.shファイルを実行して下さい。
+- 以下の指示に従って、Dockerコンテナを起動してください。
+   1. `Git Bash`もしくは `terminal`を起動します。
+   2. `cd`コマンドで クローンしたプロジェクト に移動します。  
+   3. こちらのコマンドを入力し、.shファイルを実行して下さい。
   `./beginner/demo/demo/local/start.sh`  
   .shファイルの詳しい実行方法については[こちら](https://linuxfan.info/post-1486)を参考にして下さい。
 
