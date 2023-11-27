@@ -129,7 +129,8 @@ async function handleUpdateOrder(event, id) {
 }
 
 async function handleDeleteOrder(id) {
-    const response = await fetch(`http://localhost:8080/orders/?id=${id}`, {
+    const query = new URLSearchParams({orderId: id}) // クエリパラメータの作成
+    const response = await fetch(`http://localhost:8080/orders/?${query}`, {
         method: "DELETE",
     });
     if (!response.ok) {
