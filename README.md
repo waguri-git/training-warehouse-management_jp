@@ -34,5 +34,9 @@ Editボタンの隣にDeleteボタンが追加されています。
 すべてのCRUDサービスにアクセスをしてみてください。
 
 4. Challenge  
-クエリパラメータとパスパラメータの詳しい違いについては[こちら](https://zenn.dev/eri_agri/articles/859a3362db8386)を参照。
-
+サーバーに追加の情報を送るためにURLの末尾に加えられる変数(文字列)のことを**パラメータ**と言います。
+例えば、`http://localhost:8080/orders/1`のようなURLの場合、`1`の部分がパラメータとなります。  
+パラメータの書き方には、クエリパラメータとパスパラメータが存在します(2つの詳しい違いについては[こちら](https://zenn.dev/eri_agri/articles/859a3362db8386)を参照)。  
+2つのパラメータについて、理解ができたら、次の課題に挑戦してください。
+   - orderの削除のidを受け取っていたパスパラメータの部分をクエリパラメータに書き換えてください。  
+ヒント：@PathVariableではなく、[@RequestParam](https://www.tairaengineer-note.com/springboot-requestparam-annotation/)を使いましょう。
