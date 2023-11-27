@@ -17,9 +17,9 @@
 
 ## Exercise
 
-`V000006_add_price_menu.sql`という`migration`ファイルを追加し、以下のコードを記述します。
+`V000006__add_price_menu.sql`という`migration`ファイルを追加し、以下のコードを記述します。
 
-`ALTER TABLE example_menu ADD COLUMN price decimal(10, 2)；`
+`ALTER TABLE example_menu ADD COLUMN price decimal(10, 2);`
 
 もう一度アプリケーションを実行し、`pgAdmin4`で実際のデータを参照してください。
 
