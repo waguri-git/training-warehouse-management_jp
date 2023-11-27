@@ -3,7 +3,7 @@
 ## 1. Tutorial
 
 1. 動作の確認  
-`DemoApplication`を起動しましょう。  
+`DemoApplication`をRunしましょう。  
 `order.html`をブラウザで開きましょう。
 テーブルにEditボタンが追加されています。
 Editボタンを押すと、何が起こるか見てみましょう。  
