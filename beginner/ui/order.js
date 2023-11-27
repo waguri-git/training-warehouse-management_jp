@@ -129,7 +129,7 @@ async function handleUpdateOrder(event, id) {
 }
 
 async function handleDeleteOrder(id) {
-    const response = await fetch(`http://localhost:8080/orders/${id}`, {
+    const response = await fetch(`http://localhost:8080/orders/?id=${id}`, {
         method: "DELETE",
     });
     if (!response.ok) {
