@@ -110,5 +110,5 @@ terminalで
 
 
 ## 4. Exercise
-`Make me Show the message from Java`をクリックしたときに、表示されるメッセージを`ExerciseController.java`からのものに変更してください。  
+`Make me Show the message from Java`をクリックしたときに表示されるメッセージを`ExerciseController.java`からのものに変更してください。  
 ヒント：`index.js`の`helloExercise()`を編集する必要があります。どのエンドポイントにリクエストを送れば、`ExerciseController.java`からのレスポンスが返ってくるのかを考えましょう。
