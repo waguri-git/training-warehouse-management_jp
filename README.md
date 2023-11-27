@@ -68,6 +68,6 @@ Dockerが起動していなければ、起動させておきましょう。
 
 ## 3. Exercise
 
-`exercise_html`ファイルを開くと、`get menus`ボタンがあると思います。  
+`exercise.html`ファイルを開くと、`get menus`ボタンがあると思います。  
 ボタンを押すと、`example_menu`のテーブルが表示されるようにしましょう。  
 ヒント：コードが不十分なのは、`MenuDatasource`、`MenuController`、`MenusResponse`です。それぞれのクラスにはTODOコメントで指示が書かれています。  
