@@ -3,7 +3,7 @@
 ## 1. Tutorial
 
 1. 動作の確認  
-`DemoApplication`を起動しましょう。  
+`DemoApplication`をRunしましょう。  
 `order.html`ファイルをブラウザで開きましょう。
 新しいorderを追加するための入力フォームが表示されます。  
 入力フォームに数値等を入力し、`register new Order`をクリックすると、何が起こるか見てみましょう。
