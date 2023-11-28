@@ -105,12 +105,6 @@ async function handleUpdateMenu(event, id) {
     }
 }
 
-/* 
- * TODO: サーバーにDeleteリクエストを送るためのhandleDeleteMenu()を完成させる
- *       テーブルには削除ボタンが表示されるようにし、
- *       ボタン押下時にhandleDeleteMenu()が実行されるようにする
- */
-
 async function handleDeleteMenu(id) {
     const response = await fetch(`http://localhost:8080/menus/${id}`, {
         method: "DELETE",

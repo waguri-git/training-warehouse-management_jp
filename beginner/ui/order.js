@@ -1,6 +1,3 @@
-/*
- * DOMが読み込まれたあと、fetchOrders()が呼び出される
- */
 document.addEventListener("DOMContentLoaded", fetchOrders());
 
 async function fetchOrders() {

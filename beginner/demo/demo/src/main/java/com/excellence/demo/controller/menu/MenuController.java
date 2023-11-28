@@ -57,9 +57,6 @@ public class MenuController {
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable int id) {
-        // TODO: 削除の一連の処理を完成させる
-        // Hint: コードを追加しなければならないクラスは
-        //       MenuController, MenuService, MenuRepository, MenuDatasourceの4つ
         service.deleteMenu(id);
     }
 
