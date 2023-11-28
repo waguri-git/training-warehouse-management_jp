@@ -51,7 +51,7 @@ public class OrderController {
         }
         service.updateOrder(request.toExampleOrder(orderId));
     }
-
+    // TODO: @RequestParamを利用して、クエリパラメータを受け取るように変更する
     @DeleteMapping(value = "/{orderId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable int orderId) {
