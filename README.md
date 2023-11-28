@@ -1,11 +1,15 @@
 
 # Step6 データベースの移行(マイグレーション)
 
+## 1. マイグレーション
+
 アプリケーションを再起動するたびに、データは常に元通りにリセットされるようになっています。
 
 `/beginner/demo/demo/src/main/resources/`を見てみましょう
 
-`db/migrationとlocal/testdata`のパッケージがあり、そこに`migration`ファイルがあります。
+`db/migration`と`local/testdata`のパッケージがあり、そこにマイグレーションファイル[^1]があります。
+
+[^1]: マイグレーションを行うためのSQLが書かれたSQLファイル
 
 また、`src/main/java/com/excelence/demo/config/FlywayConfig.java`にプログラムされた`config`があります。
 
@@ -15,9 +19,9 @@
 
 そのためには、新しい`migration`ファイルを追加することが必要です。
 
-## Exercise
+## 2. Exercise
 
-`V000006_add_price_menu.sql`という`migration`ファイルを追加し、以下のコードを記述します。
+`V000006__add_price_menu.sql`という`migration`ファイルを追加し、以下のコードを記述します。
 
 `ALTER TABLE example_menu ADD COLUMN price decimal(10, 2)；`
 
@@ -29,12 +33,13 @@ value(価格)の列には`NULL`が記入されています。
 
 [テーブル構造を変更する]https://www.javadrive.jp/mysql/table/index18.html
 
-### EXTRA
+## 3. Extra
 `Carrot` `玉ねぎ` `和牛`はどこから来たのでしょうか？
 
-`local/testdata`パッケージには初期データがあり、指定したテーブルのデータを常に削除し、データを追加するようになっています。
+`local/testdata`パッケージには初期データを作成するマイグレーションファイルがあり、アプリケーションを実行する度に、指定したテーブルのデータを削除し、データを追加するようになっています。
 
-これらの`example_menu`のデータにvalueを追加して、動作するかどうか確認してみましょう。
+では、`example_menu`に価格のデータが追加されるように`afterMigrate.sql`を編集して、動作するかどうか確認してみましょう。
+
 
 
 改めておめでとうございます！
