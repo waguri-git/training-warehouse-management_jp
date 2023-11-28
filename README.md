@@ -1,4 +1,4 @@
-# step5 データの削除
+# Step5 データの削除
 
 ## 1. Tutorial
 
