@@ -1,49 +1,50 @@
 
-# Step6 データベースの移行(マイグレーション)
+# Step6 DBマイグレーション
 
-## 1. マイグレーション
+## 1. Flyway
+今回の研修では、`Flyway`と呼ばれるマイグレーションツールによってアプリの実行毎にテーブルがリセットされるようになっています。なので、データを追加しても、アプリを再起動すると、追加したデータは削除されているはずです。  
+`Flyway`により、データベース環境が簡単に再現可能になったり、データベースのバージョンを管理できるようになり、データベース移行が手軽に行えます。
 
-アプリケーションを再起動するたびに、データは常に元通りにリセットされるようになっています。
+`main/java/com/excellence/demo/config/FlywayConfig.java`を見てください。
+`FlywayConfig.java`は、`Flyway`のconfigファイルであり、
+`db/migration`と`local/testdata`を参照するように定義してあります。
 
-`/beginner/demo/demo/src/main/resources/`を見てみましょう
+では、`/beginner/demo/demo/src/main/resources/`を見てみましょう。  
+`Flyway`の参照先である`db/migration`と`local/testdata`のパッケージがあり、そこにマイグレーションファイルがあります。
 
-`db/migration`と`local/testdata`のパッケージがあり、そこにマイグレーションファイル[^1]があります。
+`Flyway`は、マイグレーションファイルに書かれたSQLを順番に実行し、データベースをマイグレートします。
 
-[^1]: マイグレーションを行うためのSQLが書かれたSQLファイル
+もし既存のマイグレーションファイルが変更され、競合が発生した場合、ローカルであれば、データベースを1度リセットし、新バージョンのマイグレーションファイルを実行すれば問題ありません。
 
-また、`src/main/java/com/excelence/demo/config/FlywayConfig.java`にプログラムされた`config`があります。
-
-`migration`ファイルが変更され、競合が発生した場合ローカルではデータベースをリセットし、新バージョンの`migration`を実行すれば問題ありません。
-
-しかし、実際の仕事では`migration`ファイルを安易に変更してはいけません。
-
-そのためには、新しい`migration`ファイルを追加することが必要です。
+しかし、本番環境では、マイグレーションファイルを安易に変更してはいけません。テーブルが壊れたり、データが失われる可能性があります。
+データベースに変更を加える場合は、新しいマイグレーションファイルを追加するのが基本です。
 
 ## 2. Exercise
+`example_menu`のテーブル構造に変更を加えてみましょう。  
+`db/migration`パッケージに`V000006__add_price_menu.sql`というマイグレーションファイルを追加し、以下のコードを記述します。
 
-`V000006__add_price_menu.sql`という`migration`ファイルを追加し、以下のコードを記述します。
+`ALTER TABLE example_menu ADD COLUMN price decimal(10, 2);`
 
-`ALTER TABLE example_menu ADD COLUMN price decimal(10, 2)；`
+記述が完了したら、アプリケーションを実行し、`pgAdmin4`で`example_menu`を確認してください。
 
-もう一度アプリケーションを実行し、`pgAdmin4`で実際のデータを参照してください。
+新しく`price`という列が追加され、値は`NULL`になっていると思います。
 
-value(価格)の列には`NULL`が記入されています。
+[補足]  
+`ALTER TABLE`文については[こちら](https://www.javadrive.jp/mysql/table/index18.html)を参照してください。
 
-[HINT]
-
-[テーブル構造を変更する]https://www.javadrive.jp/mysql/table/index18.html
 
 ## 3. Extra
-`Carrot` `玉ねぎ` `和牛`はどこから来たのでしょうか？
-
 `local/testdata`パッケージには初期データを作成するマイグレーションファイルがあり、アプリケーションを実行する度に、指定したテーブルのデータを削除し、データを追加するようになっています。
 
-では、`example_menu`に価格のデータが追加されるように`afterMigrate.sql`を編集して、動作するかどうか確認してみましょう。
+`example_menu`に最初から追加されているCarrot、 玉ねぎ、 和牛は、そのマイグレーションファイルによって追加されたものでした。
 
+では、`example_menu`の価格の列に初期データを追加するにはどうすればよいでしょうか。
+`afterMigrate.sql`を編集して、価格の初期データを設定してみましょう。
 
+## 4. おわりに
 
-改めておめでとうございます！
+お疲れ様でした。
 
 以上が、アプリケーションを作るのに必要なものの基本になります。
 
-これからは、それらの知識を組み合わせて、自分の道を歩み始めましょう！
+これからは、ここで得た知識を組み合わせて、自分の道を歩み始めましょう！
