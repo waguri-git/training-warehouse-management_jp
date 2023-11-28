@@ -38,5 +38,7 @@ Editボタンの隣にDeleteボタンが追加されています。
 今回のStepやStep4でも利用した`http://localhost:8080/orders/${id}`の末尾の`id`の部分がパラメータです。  
 パラメータの書き方には、**クエリパラメータ**と**パスパラメータ**が存在します(2つの詳しい違いについては[こちら](https://zenn.dev/eri_agri/articles/859a3362db8386)を参照)。  
 2つのパラメータについて、理解ができたら、次の課題に挑戦してください。
-   - 削除するorderのidを受け取っていたパスパラメータの部分をクエリパラメータに変えてください。   
+   - 削除するorderのidを受け取っていたパスパラメータの部分をクエリパラメータに変えてください。[^1]
 ヒント：@PathVariableではなく、[@RequestParam](https://www.tairaengineer-note.com/springboot-requestparam-annotation/)を使いましょう。
+
+[^1]: 今回は練習でパスパラメータからクエリパラメータに変更しますが、DELETEリクエストであれば、パスパラメータのほうが適切かと思います。
