@@ -128,6 +128,7 @@ async function handleUpdateOrder(event, id) {
     }
 }
 
+// TODO: パスパラメータの部分クエリパラメータの形に変更
 async function handleDeleteOrder(id) {
     const response = await fetch(`http://localhost:8080/orders/${id}`, {
         method: "DELETE",
