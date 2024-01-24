@@ -26,3 +26,13 @@ async function helloExercise() {
     const text = await response.text();
     alert(text);
 }
+
+// fetchはクライアント（PC）からサーバーにリクエストを送る関数
+// つまり、ここでJavaのHelloControllerクラスにhttpリクエストが飛んでいる
+// ドットはオブジェクト内のキーを表している（.okや.text）
+// キーは関数でもok（その場合はメソッドになる）
+// オブジェクト名.キー名（変数もしくは関数）でオブジェクト内のキーに干渉できる
+// if内のreturnはそこで処理を完結させているということ
+// elseを使う場合、returnは消してif文後のプログラムをelse後に繋げることで代替できる
+// asyncはawaitを使うために必要な記号のようなもの
+// asyncとawaitはセットで同期処理を行う（時間のかかる処理でも終わるまで次の処理が始まるのを待つ）
