@@ -1,4 +1,4 @@
-async function fetchMenus() {
+async function fetchMenus() { //エンドポイントに繋がっている　同じくエンドポイントに繋がっているジャバとつながる　サーバー側がエンドポイント（menus）を設置する
     const menus = await fetch("http://localhost:8080/menus");
     if (!menus.ok) {
         throw new Error("Could not fetch menus");
@@ -8,7 +8,7 @@ async function fetchMenus() {
     renderMenus(menusJson);
 }
 
-function renderMenus(menusJson) {
+function renderMenus(menusJson) {　//自分で書く
     const menus = document.getElementById("menu-list");
     if (!menus) {
         throw new Error("Could not find orders element");
@@ -27,27 +27,20 @@ function renderMenus(menusJson) {
     });
 }
 
-async function handleRegisterMenu(event) {
-    event.preventDefault();
+async function handRegisterMwnu(event) {
+    event.preventDefauld();
     const form = event.target.form;
-    const formData = new FormData(form);
+    const formDate = new FormDate(form);
     const menu = {
-        name: formData.get("name"),
-    };
+        name: formDate.get("name"),
+        };
+       
+const response =await fetch("http://localhost:8080/menus",{
+    method: "POST",
+    headers:{
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(menu)
+});
     
-    // TODO: "fetch"を完成させる
-    const response = await fetch("", {
-        method: "",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: "送信するデータを記述",
-    });
-    if (!response.ok) {
-        const error = await response.json();
-        console.error(error);
-        return;
-    }
-
-    fetchMenus();
 }

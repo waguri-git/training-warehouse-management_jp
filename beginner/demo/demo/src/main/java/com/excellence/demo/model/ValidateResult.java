@@ -6,11 +6,11 @@ public class ValidateResult {
 
     public boolean ok() {
         return ok;
-    }
+    } //真偽値メソッド
 
     public String errorMessage() {
         return errorMessage;
-    }
+    }//エラーメッセージを返すメソッド
 
     public static ValidateResult success() {
         return new ValidateResult(true, "");

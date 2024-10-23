@@ -28,7 +28,12 @@ public class MenuDatasource implements MenuRepository {
     @Override
     public void insertMenu(ExampleMenu menu) {
         // TODO: insertMenu()を完成させる
-        String sql = "ここにテーブルにデータを追加するSQL文を書く";
+        String sql = "INSERT INTO example_menu(id, name) VALUES (?, ?) ";
+        ExampleMenuEntity entity = new ExampleMenuEntity(menu.id,menu.name);
+        jdbcTemplate.update(
+                sql,
+                entity.id,
+                entity.name);
     }
 
     private ExampleMenu toModel(Map<String, Object> record) {
